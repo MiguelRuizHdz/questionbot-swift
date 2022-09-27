@@ -6,7 +6,7 @@
  */
 "hola".count
 //: Si quieres elegir una de dos respuestas predeterminadas distintas, puedes usar el operador de resto para obtener el resto de la cuenta después de hacer la división por dos:
-“a".count % 2
+"a".count % 2
 "ab".count % 2
 "abc".count % 2
 "abcd".count % 2
@@ -21,10 +21,12 @@ func responseTo(question: String) -> String {
         return "¡Al norte!"
     } else {
 
-        let defaultNumber = question.count % 2
+        let defaultNumber = question.count % 3
 
         if defaultNumber == 0 {
             return "Eso depende"
+        } else if defaultNumber == 1 {
+            return "Lo veo díficil"
         } else {
             return "Pregúntame de nuevo mañana"
         }
