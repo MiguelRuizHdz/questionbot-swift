@@ -6,18 +6,19 @@
 "Dónde" == "Dónde"
 "DÓNDE" == "dónde"
 //:  Podrías manejar esta situación abarcando todas las combinaciones posibles de mayúsculas y minúsculas, pero no sería lo más astuto:
- if question.hasPrefix("dónde")...
- if question.hasPrefix("Dónde")...
- if question.hasPrefix("DÓnde")...
- if question.hasPrefix("DÓNde")...
+//  if question.hasPrefix("dónde")...
+//  if question.hasPrefix("Dónde")...
+//  if question.hasPrefix("DÓnde")...
+//  if question.hasPrefix("DÓNde")...
 //:  En cambio, es mejor cambiar las mayúsculas y minúsculas del texto antes de buscar coincidencias, por medio del método `lowercased` (minúscula):
-let question = "¿DÓNDE ESTÁN LAS GALLETAS?"
-let lowerQuestion = question.lowercased()
-lowerQuestion.hasPrefix("dónde")
+// let question = "¿DÓNDE ESTÁN LAS GALLETAS?"
+// let lowerQuestion = question.lowercased()
+// lowerQuestion.hasPrefix("dónde")
 //:  - callout(Ejercicio): Vuelve a escribir la función que aparece abajo para que funcione con PrEgunTAs eN maYÚScuLa Y MiNúSCUla, a fin de obtener una respuesta correcta en el ejemplo:
 func responseTo(question: String) -> String {
 
-    if question.hasPrefix("hola") {
+    let lowerQuestion = question.lowercased()
+    if lowerQuestion.hasPrefix("hola") {
         return "Por qué, hola"
     } else {
         return "Eso depende"
